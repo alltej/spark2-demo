@@ -1,3 +1,5 @@
+package com.alltej
+
 import org.apache.spark.sql.SparkSession
 
 
@@ -36,6 +38,7 @@ object CatalogExample {
 
     // drop the table
     catalog.dropTempView("sales")
+    println("Catalog Show")
     catalog.listTables().select("name").show()
 
     // list functions

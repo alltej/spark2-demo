@@ -1,0 +1,18 @@
+object FunctionalProgramming {
+  def main(args: Array[String]): Unit = {
+
+    //1. create a squareIt function that returns square of input x
+
+    //2. create a cubeIt function that returns cube of input x
+
+    //3. create a calcIt function that that takes input x and a function of type squareIt/cubeIt
+
+    val input = 3
+    val y = calcIt(input, squareIt)
+    println(s"Square of ${input} = ${y}") //"Square of 3 = 9"
+
+
+    var z = calcIt(input, cubeIt)
+    println(s"Cube of ${input} = ${z}") //"Cube of 3 = 27"
+  }
+}
