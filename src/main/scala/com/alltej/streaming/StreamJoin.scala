@@ -4,7 +4,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.streaming.OutputMode
 
 /**
- * Created by madhu on 24/07/17.
+ * Created on 24/07/17.
  */
 object StreamJoin {
 

@@ -4,7 +4,7 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.SparkSession
 
 /**
-  * Created by madhu on 6/5/16.
+  * Created on 6/5/16.
   */
 object DataSetWordCount {
 
