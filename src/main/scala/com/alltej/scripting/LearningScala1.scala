@@ -1,6 +1,7 @@
-package com.alltej
+package com.alltej.scripting
 
 /**
+  * This run as app (not script). This is made possible by 'extends App'
   * @author Allan Tejano
   *         5/11/2018
   */

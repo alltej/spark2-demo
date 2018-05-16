@@ -1,6 +1,6 @@
 package com.alltej
 
-import org.apache.log4j._
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark._
 
 import scala.math.max
