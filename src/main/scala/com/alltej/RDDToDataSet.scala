@@ -1,5 +1,6 @@
 package com.alltej
 
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.types.{DoubleType, StringType, StructField, StructType}
 import org.apache.spark.sql.{Row, SparkSession}
 
@@ -9,6 +10,7 @@ import org.apache.spark.sql.{Row, SparkSession}
 object RDDToDataSet {
 
   def main(args: Array[String]) {
+    Logger.getLogger("org").setLevel(Level.ERROR)
 
     val sparkSession = SparkSession.builder.
       master("local")
