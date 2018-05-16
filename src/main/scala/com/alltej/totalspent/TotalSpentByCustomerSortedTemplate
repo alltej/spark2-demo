@@ -1,0 +1,33 @@
+
+
+/** Compute the total amount spent per customer in some fake e-commerce data. */
+object TotalSpentByCustomerSorted {
+
+  /** Convert input data to (customerID, amountSpent) tuples */
+  def extractCustomerPricePairs(line: String) = {
+
+  }
+
+  /** Our main function where the action happens */
+  def main(args: Array[String]) {
+
+    //1. Set the log level to only print errors
+
+    //2. Create a SparkContext using every core of the local machine
+
+    //3. Read from file (file:customer-orders.csv) (input)
+
+    //4. Map input to extractCustomerPricePairs  (mappedInput)
+
+    //5. Get map of totalByCustomer (totalByCustomer)
+
+    //6. Flip the map (flipped)
+
+    //7. Sort the map (totalByCustomerSorted)
+
+    //8. Collect the results
+
+    //9 Print the results.
+  }
+
+}

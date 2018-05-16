@@ -1,14 +1,14 @@
-package com.alltej
+package com.alltej.totalspent
 
 import org.apache.log4j._
 import org.apache.spark._
 
 /** Compute the total amount spent per customer in some fake e-commerce data. */
-object TotalSpentByCustomerSorted {
+object TotalSpentByCustomer {
   
   /** Convert input data to (customerID, amountSpent) tuples */
   def extractCustomerPricePairs(line: String) = {
-    var fields = line.split(",")
+    val fields = line.split(",")
     (fields(0).toInt, fields(2).toFloat)
   }
  
@@ -19,20 +19,16 @@ object TotalSpentByCustomerSorted {
     Logger.getLogger("org").setLevel(Level.ERROR)
     
      // Create a SparkContext using every core of the local machine
-    val sc = new SparkContext("local[*]", "TotalSpentByCustomerSorted")
+    val sc = new SparkContext("local[*]", "TotalSpentByCustomer")   
 
-    val input = sc.textFile(getClass.getResource("/customer-orders.csv").toString)
     //val input = sc.textFile("../customer-orders.csv")
+    val input = sc.textFile(getClass.getResource("/customer-orders.csv").toString)
 
     val mappedInput = input.map(extractCustomerPricePairs)
     
     val totalByCustomer = mappedInput.reduceByKey( (x,y) => x + y )
     
-    val flipped = totalByCustomer.map( x => (x._2, x._1) )
-    
-    val totalByCustomerSorted = flipped.sortByKey()
-    
-    val results = totalByCustomerSorted.collect()
+    val results = totalByCustomer.collect()
     
     // Print the results.
     results.foreach(println)
